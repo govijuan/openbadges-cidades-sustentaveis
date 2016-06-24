@@ -1,0 +1,11 @@
+.header-content{
+	background-image: url(../img/img-destaque.jpg);
+	background-size: cover; 
+	color: white;
+	font-size: 20px;
+	min-height: 200px
+}
+.texto-destaque{
+	position: relative;
+	bottom: 50%;
+}
