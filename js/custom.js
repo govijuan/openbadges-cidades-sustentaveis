@@ -18,18 +18,20 @@ function debounce(func, wait, immediate) {
 	};
 };
 
+function asertaFundoDestaque(){
+	$('.header-content').css({
+		'width': windowWidth + 'px',
+		'height': ((windowWidth * 55) / 144) + 'px'
+	});
+	$('.logo-container img').css('margin-top', '-' + ((windowWidth / 100 ) * 4.666)  + 'px');
+}
 
 var trocarDimDest = debounce(function() {
 	windowWidth = $(window).width();
 	asertaFundoDestaque();
 }, 250);
 
-function asertaFundoDestaque(){
-	$('.header-content').css({
-		'width': windowWidth + 'px',
-		'height': ((windowWidth * 55) / 144) + 'px'
-	});
-}
+
 $(document).ready(function(){
 	windowWidth = $(window).width();
 	asertaFundoDestaque();

@@ -19,3 +19,7 @@ body{font-family: 'Open Sans', sans-serif;}
 	vertical-align: middle;
 	font-weight: 300;
 }
+.logo-container img{
+	width: 20%;
+	display: inline-block;
+}
