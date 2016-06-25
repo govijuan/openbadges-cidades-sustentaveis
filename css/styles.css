@@ -23,3 +23,19 @@ body{font-family: 'Open Sans', sans-serif;}
 	width: 20%;
 	display: inline-block;
 }
+
+.txt-selo-cidades, .txt-o-que-e-openbadges{
+	margin: 30px 0 0;
+}
+.txt-selo-cidades a{color: #3bb023}
+.txt-selo-cidades h2{
+	color:#3bb023;
+	margin: 0 0 40px;
+}
+
+.txt-o-que-e-openbadges h2{
+	color:#122a46;
+	margin: 0 0 40px;
+}
+.txt-o-que-e-openbadges p, .txt-selo-cidades p{padding: 0 20px 0 0;}
+.powered-by{font-weight: 600; font-style: italic; color: #122a46}
