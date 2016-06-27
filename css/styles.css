@@ -24,6 +24,8 @@ body{font-family: 'Open Sans', sans-serif;}
 	display: inline-block;
 }
 
+.descricao{padding: 0 0 100px}
+
 .txt-selo-cidades, .txt-o-que-e-openbadges{
 	margin: 30px 0 0;
 }
@@ -39,3 +41,28 @@ body{font-family: 'Open Sans', sans-serif;}
 }
 .txt-o-que-e-openbadges p, .txt-selo-cidades p{padding: 0 20px 0 0;}
 .powered-by{font-weight: 600; font-style: italic; color: #122a46}
+.como-usar{
+	background: #47a64e; 
+	color: white;
+	padding: 60px 0 0;
+}
+.como-usar .container{
+	
+}
+.como-usar-modulo-wrap{
+	display: table;
+	height: 170px;
+	position: relative;
+	vertical-align: middle
+}
+.como-usar-modulo{
+	display: table-cell;
+	position: relative;
+	vertical-align: middle
+}
+.como-usar-modulo a{color: white; font-weight: 600; font-style: italic}
+footer{background: #0f111a; color: white; padding: 40px 0}
+.apoio{
+	
+}
+.apoio img{width: 100px; margin: 0 25px}
