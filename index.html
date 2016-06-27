@@ -11,16 +11,104 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,600italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-  <!--[if lt IE 9]>
+ <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <style >
+	  body{font-family: 'Open Sans', sans-serif;}
+.header-content{
+	background-image: url(../img/img-destaque.jpg);
+	background-size: cover; 
+	color: white;
+	font-size: 20px;
+	min-height: 200px
+}
+.header-content .container{height: 100%}
+.header-content .container .row{
+	display: table; 
+	height: 100%; 
+	overflow: hidden;
+	width: 100%;
+}
+.texto-destaque{
+	position: relative;
+	display: table-cell; 
+	vertical-align: middle;
+	font-weight: 300;
+}
+.logo-container img{
+	width: 20%;
+	display: inline-block;
+}
+
+.descricao{padding: 0 0 100px}
+
+.txt-selo-cidades, .txt-o-que-e-openbadges{
+	margin: 30px 0 0;
+}
+.txt-selo-cidades a{color: #3bb023}
+.txt-selo-cidades h2{
+	color:#3bb023;
+	margin: 0 0 40px;
+}
+
+.txt-o-que-e-openbadges h2{
+	color:#122a46;
+	margin: 0 0 40px;
+}
+.txt-o-que-e-openbadges p, .txt-selo-cidades p{padding: 0 20px 0 0;}
+.powered-by{font-weight: 600; font-style: italic; color: #122a46}
+.como-usar{
+	background: #47a64e; 
+	color: white;
+	padding: 60px 0 100px;
+}
+.como-usar .container{
+	
+}
+.como-usar-modulo-wrap{
+	display: table;
+	height: 170px;
+	position: relative;
+	vertical-align: middle
+}
+.como-usar-modulo{
+	display: table-cell;
+	position: relative;
+	vertical-align: middle
+}
+.como-usar-modulo a{color: white; font-weight: 600; font-style: italic}
+footer{background: #0f111a; color: white; padding: 40px 0}
+.apoio{
+	
+}
+.apoio img{width: 100px; margin: 0 25px}
+.implementado-por img{width: 60px; margin: 0 25px}
+.apoio, .implementado-por{height: 59px; line-height: 59px}
+.logo-cidades-sustentaveis{height: 59px}
+.logo-cidades-sustentaveis img{width: 160px; display: inline-block}
+@media(min-width: 992px){
+	.logo-cidades-sustentaveis{text-align: right;}
+}
+@media(max-width: 991px){
+	.apoio, .implementado-por, .logo-cidades-sustentaveis{text-align: center; margin: 20px 0}
+	.logo-container img{width: 198.4px!important}
+}
+@media(min-width:992px) and (max-width:1199px){
+	.implementado-por img{margin: 0 4px!important}
+}
+@media(max-width:500px){
+	.header-content{
+		background-size: 500px 200px;
+		background-position: center center;
+	}
+}
+  </style>
 </head>
 
 <body>
 	<header>
-		<h1 style="position:absolute; top: -100px;">Compromisso com Programa Cidades Sustentáveis</h1>
+		<h1 style="position:absolute; top: -500px;">Compromisso com Programa Cidades Sustentáveis</h1>
 		<div class="header-content">
 			<div class="container">
 				<div class="row text-center">
@@ -54,7 +142,7 @@
 				<p>É o nome de um conjunto de especificações e normas abertas originalmente desenvolvido pela Fundação Mozilla com o financiamento da Fundação MacArthur e tem como principal objetivo descrever uma maneira de empacotar realizações, incorporá-lo em arquivos de imagem e estabelecer uma infra-estrutura para validação através de<br><br><br></p>
 				<p><a href="">
 					<span class="powered-by">powered by</span><br>
-					<img src="img/logo-openbadges.jpg"/>
+					<img src="img/logo-openbadges.jpg" alt="logo do OpenBadges"/>
 				</a></p>
 			</div>
 		</div>
@@ -91,12 +179,56 @@
 	</section>
 	<footer>
 		<div class="container">
-			<div class="col-md-6">
-				<div class="apoio">Apoio <img src="img/logo-votolegal.svg" alt="Logo Voto legal"/>
+			<div class="col-md-6 col-sm-12">
+				<div class="apoio col-md-6 col-sm-12">Apoio <img src="img/logo-votolegal.svg" alt="Logo Voto legal"/></div>
+				<div class="implementado-por col-md-6 col-sm-12">Implementado por <img src="img/logo-appcivico.svg" alt="Logo do AppCívico"/></div>
 			</div>
-			<div class="col-md-6"></div>
+			<div class="col-md-6 col-sm-12">
+				<div class="logo-cidades-sustentaveis"><img src="img/logo-cidades.svg" alt="Logo Cidades Sustentáveis"/></div>
+			</div>
 		</div>
 	</footer>
-	<script src="js/custom.js"></script>
+	<script type="text/javascript">
+		var windowWidth = 0;
+		var windowWidth = $(window).width();
+		
+		//Debounce Function
+		
+		function debounce(func, wait, immediate) {
+			var timeout;
+			return function() {
+				var context = this, args = arguments;
+				var later = function() {
+					timeout = null;
+					if (!immediate) func.apply(context, args);
+				};
+				var callNow = immediate && !timeout;
+				clearTimeout(timeout);
+				timeout = setTimeout(later, wait);
+				if (callNow) func.apply(context, args);
+			};
+		};
+		
+		function asertaFundoDestaque(){
+			$('.header-content').css({
+				'width': windowWidth + 'px',
+				'height': ((windowWidth * 55) / 144) + 'px'
+			});
+			$('.logo-container img').css('margin-top', '-' + ((windowWidth / 100 ) * 4.666)  + 'px');
+		}
+		
+		var trocarDimDest = debounce(function() {
+			windowWidth = $(window).width();
+			asertaFundoDestaque();
+		}, 250);
+		
+		
+		$(document).ready(function(){
+			windowWidth = $(window).width();
+			asertaFundoDestaque();
+		});
+		
+		window.addEventListener('resize', trocarDimDest);
+	</script>
 </body>
 </html>

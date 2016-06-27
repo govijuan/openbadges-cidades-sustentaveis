@@ -44,7 +44,7 @@ body{font-family: 'Open Sans', sans-serif;}
 .como-usar{
 	background: #47a64e; 
 	color: white;
-	padding: 60px 0 0;
+	padding: 60px 0 100px;
 }
 .como-usar .container{
 	
@@ -66,3 +66,16 @@ footer{background: #0f111a; color: white; padding: 40px 0}
 	
 }
 .apoio img{width: 100px; margin: 0 25px}
+.implementado-por img{width: 60px; margin: 0 25px}
+.apoio, .implementado-por{height: 59px; line-height: 59px}
+.logo-cidades-sustentaveis{height: 59px}
+.logo-cidades-sustentaveis img{width: 160px; display: inline-block}
+@media(min-width: 992px){
+	.logo-cidades-sustentaveis{text-align: right;}
+}
+@media(max-width: 991px){
+	.apoio, .implementado-por, .logo-cidades-sustentaveis{text-align: center; margin: 20px 0}
+}
+@media(min-width:992px) and (max-width:1199px){
+	.implementado-por img{margin: 0 4px!important}
+}
