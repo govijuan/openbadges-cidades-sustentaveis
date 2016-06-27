@@ -39,9 +39,5 @@ $(document).ready(function(){
 
 window.addEventListener('resize', trocarDimDest);
 
-/* $(window).resize(function() {
-	windowWidth = $(window).width();
-       asertaFundoDestaque();
-}); */
 
 	
